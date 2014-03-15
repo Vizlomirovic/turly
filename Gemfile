@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'social-share-button'
 
-gem :development do
+group :development do
 		gem 'better_errors'
 		gem 'binding_of_caller'
 	  gem 'annotate' #add annotation on top of models
