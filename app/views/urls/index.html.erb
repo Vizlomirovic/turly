@@ -1,0 +1,27 @@
+<h1>turly.io</h1>
+<h2>Simple URL redirecting service.</h2>
+
+<section ="content-wrapper">
+	<%= form_for @url, :url => {action: "create"} do |f|%>
+      <%= f.text_field :url %>
+      <%= f.submit "shorten", class: "shorten-btn btn" %>
+   <%end%>
+
+   <%if flash[:error]%>
+      <div class="error" style="color: red">
+         <%=flash[:error]%>
+      </div>
+   <%end%>
+
+   <%if flash[:success]%>
+      <div class="success" style="color: green">
+         <%=flash[:success]%>
+      </div>
+   <%end%>
+<!--
+   		<% @urls.each do |u|%>
+         <br/>
+   			<%= u.url %>
+            <%= u.shorten %>
+   		<%end%> -->
+</section>
