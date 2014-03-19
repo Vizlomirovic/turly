@@ -6,7 +6,8 @@ class UrlsController < ApplicationController
 	end
 	
 	def create		
-		s = (0...6).map { (65 + rand(26)).chr }.join.to_s.downcase
+
+		s = generate
 
 		m_url = URI::parse(URI::encode(params[:url][:url]))
 
@@ -36,4 +37,13 @@ class UrlsController < ApplicationController
 			redirect_to urls.url 
 		end
 	end
+private
+	def generate
+			short = (0...6).map { (65 + rand(26)).chr }.join.to_s.downcase
+			if Url.where(:shorten=>short).present?
+				(0...6).map { (65 + rand(26)).chr }.join.to_s.downcase
+			else
+				short
+			end
+		end 
 end
