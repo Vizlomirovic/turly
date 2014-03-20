@@ -7,8 +7,8 @@
       <h2>Our service makes your urls short and sweet.</h2>
 
    	<%= form_for @url, :url => {action: "create"} do |f|%>
-         <%= f.text_field :url %>
-         <%= f.submit "shorten", class: "shorten-btn btn" %>
+         <%= f.text_field :url, :class=>"url-input-form" %>
+         <%= f.submit "shorten", :class=>"shorten-btn btn" %>
       <%end%>
    </section>
 
