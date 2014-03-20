@@ -10,7 +10,7 @@
          <%= f.text_field :url, :class=>"url-input-form" %>
          <%= f.submit "shorten", :class=>"shorten-btn btn" %>
       <%end%>
-   </section>
+   
 
    <%if flash[:error]%>
       <div class="error" style="color: red">
@@ -23,5 +23,6 @@
          <%=flash[:success]%>
       </div>
    <%end%>
+   </section>
    
 </section>

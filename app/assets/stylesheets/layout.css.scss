@@ -6,15 +6,17 @@ $main-font-color: #6d6d6d;
 body{
 	background-color: $background-color;
 	color:$main-font-color;
-	font-family: 'Kite One', sans-serif;
+	font-family: Arial, sans-serif;
 }
 
 h1{
 	font-size: 2em;
+	margin: 0;
 }
 
 h2{
 	font-size: 0.8em;
+	font-weight: normal;
 }
 
 .content-wrapper{
