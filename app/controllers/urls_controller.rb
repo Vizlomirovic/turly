@@ -6,11 +6,8 @@ class UrlsController < ApplicationController
 	end
 	
 	def create		
-
-		s = generate
-
 		m_url = URI::parse(URI::encode(params[:url][:url]))
-
+		s = Url.generate
 		#check if parsed url is URL and then return error or success
 		unless m_url.kind_of?URI::HTTP or m_url.kind_of?URI::HTTPS
 			flash[:error] = "The URL you entered is not valid."
@@ -37,13 +34,4 @@ class UrlsController < ApplicationController
 			redirect_to urls.url 
 		end
 	end
-private
-	def generate
-			short = (0...6).map { (65 + rand(26)).chr }.join.to_s.downcase
-			if Url.where(:shorten=>short).present?
-				(0...6).map { (65 + rand(26)).chr }.join.to_s.downcase
-			else
-				short
-			end
-		end 
 end
