@@ -31,7 +31,7 @@ class UrlsController < ApplicationController
 			flash[:error] = "The URL can't be found." 
 			redirect_to index_path 
 		else 
-			redirect_to urls.url 
+			redirect_to urls.url
 		end
 	end
 end
